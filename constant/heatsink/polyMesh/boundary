@@ -1,0 +1,43 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/geom-1-heatsink/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+2
+(
+    geom-1-heatsink_to_geom-1-chip
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          100;
+        startFace       940;
+        sampleMode      nearestPatchFace;
+        sampleRegion    geom-1-chip;
+        samplePatch     geom-1-chip_to_geom-1-heatsink;
+    }
+    geom-1-heatsink_to_geom-1-enclosure
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          1020;
+        startFace       1040;
+        sampleMode      nearestPatchFace;
+        sampleRegion    geom-1-enclosure;
+        samplePatch     geom-1-enclosure_to_geom-1-heatsink;
+    }
+)
+
+// ************************************************************************* //

@@ -1,0 +1,33 @@
+FoamFile
+{
+	version	2.0;
+	class	dictionary;
+	format	ascii;
+	location	"constant/enclosure";
+	object	viewFactorsDict;
+}
+writeViewFactorMatrix	true;
+writeFacesAgglomeration	true;
+writePatchViewFactors	false;
+maxDynListLength	1000000;
+facesPerCluster	5;
+inlet
+{
+	nFacesInCoarsestLevel	317;
+	featureAngle	20.0;
+}
+outlet
+{
+	nFacesInCoarsestLevel	316;
+	featureAngle	20.0;
+}
+enclosure_to_heatsink
+{
+	nFacesInCoarsestLevel	204;
+	featureAngle	20.0;
+}
+Walls
+{
+	nFacesInCoarsestLevel	3356;
+	featureAngle	20.0;
+}
